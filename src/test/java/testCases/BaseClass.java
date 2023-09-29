@@ -29,7 +29,7 @@ public class BaseClass {
 	@BeforeMethod
 	public void setup() throws IOException {
 
-		data = new FileInputStream(System.getProperty("user.dir") + "\\src\\test\\java\\utilities\\config.properties");
+		data = new FileInputStream(".\\src\\test\\java\\utilities\\config.properties");
 		prop = new Properties();
 		prop.load(data);
 
@@ -42,9 +42,6 @@ public class BaseClass {
 
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		data = new FileInputStream(System.getProperty("user.dir") + "\\src\\test\\java\\utilities\\config.properties");
-		prop = new Properties();
-		prop.load(data);
 		driver.get(prop.getProperty("url"));
 	}
 

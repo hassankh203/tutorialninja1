@@ -31,7 +31,7 @@ public class TryingZone extends BaseClass {
 	public static void screenshot(String testCaseName) throws IOException {
 
 		TakesScreenshot sc = (TakesScreenshot) driver;
-		File target = new File(System.getProperty("user.dir")+ "\\scrennShots\\" + testCaseName+ ".png");
+		File target = new File(System.getProperty("user.dir")+ "\\scrennShots\\" + timeStamp()+ ".png");
 		File src = sc.getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(src, target);
 	}
@@ -40,5 +40,6 @@ public class TryingZone extends BaseClass {
 		return new SimpleDateFormat("yyyy-MM-dd HH-mm-ss").format(new Date());
 
 	}
+	
 
 }

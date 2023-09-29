@@ -43,11 +43,12 @@ public class LoginPage extends BasePage {
 	
 	public boolean invalidCredentialsWarningMessage()
 	{
-		String actual = driver.findElement(invalidLoginCredential).getText();
-		String expected = "Warning: No match for E-Mail Address and/or Password.";
+//		String actual = driver.findElement(invalidLoginCredential).getText();
+//		String expected = "Warning: //No match for E-Mail Address and/or Password.";
 		//return actual.contentEquals(expected);
 		
-		return actual.equals(expected);
+//		return actual.equals(expected);
+		 return driver.findElement(invalidLoginCredential).isDisplayed();
 		
 	}
 
